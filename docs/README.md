@@ -1,44 +1,271 @@
-
 # Software-Defined Factory Controller using Distributed RT Linux
 
 ## Team Members
 
-S. No.	Roll Number	Name
-1	2420030313	P Maha Lakshmi
-2	2420030441	S Tejasree
-3	2420030578	B Sruthi
-4	2420090132	K Amulya
+| S. No. | Roll Number | Name           |
+| :----: | :---------: | -------------- |
+|    1   |  2420030313 | P Maha Lakshmi |
+|    2   |  2420030441 | S Tejasree     |
+|    3   |  2420030578 | B Sruthi       |
+|    4   |  2420090132 | K Amulya       |
 
 ## Supervisor
 
-Dr. Archana Kalidindi
+**C.H. Srikanth**
+
+---
 
 ## Abstract
 
-This project develops a software-defined factory controller for an
-automated conveyor-based sorting process using distributed real-time
-Linux nodes. The system is implemented as a software-based simulation
-where separate nodes perform conveyor control, object detection,
-sorting decisions, and communication.
+This project develops a **Software-Defined Factory Controller using Distributed Real-Time Linux (RT Linux)** for an automated conveyor-based sorting process.
+
+The system is implemented as a **software-based simulation**, eliminating the need for physical hardware. The factory process is divided into multiple software modules running as separate RT Linux nodes. These nodes perform conveyor control, object detection, sorting decisions, and inter-node communication.
+
+The distributed architecture enables real-time processing, modular control, and reliable communication between different factory operations. The project demonstrates how software-defined and distributed real-time control can be used to simulate an automated industrial sorting system.
+
+---
+
+## Project Objectives
+
+* Develop a software-defined controller for an automated factory sorting process.
+* Implement distributed control using separate RT Linux nodes.
+* Simulate conveyor control, object detection, and sorting operations.
+* Enable real-time communication between the distributed nodes.
+* Implement automated sorting decisions based on detected object properties.
+* Provide a modular and flexible software architecture.
+* Monitor the status and results of the simulated factory process.
+
+---
+
+## System Architecture
+
+The system consists of multiple software-based RT Linux nodes:
+
+```text
+                ┌─────────────────────────┐
+                │     Controller Node     │
+                │  Overall Coordination   │
+                └────────────┬────────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+              ▼              ▼              ▼
+      ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+      │  Conveyor   │ │  Detection  │ │   Sorting   │
+      │    Node     │ │    Node     │ │    Node     │
+      └─────────────┘ └─────────────┘ └─────────────┘
+              │              │              │
+              └──────────────┼──────────────┘
+                             ▼
+                   ┌──────────────────┐
+                   │ Communication /  │
+                   │ Monitoring Module │
+                   └──────────────────┘
+```
+
+### Main Modules
+
+| Module               | Function                                           |
+| -------------------- | -------------------------------------------------- |
+| Conveyor Node        | Simulates conveyor movement and control            |
+| Detection Node       | Detects and classifies simulated objects           |
+| Sorting Node         | Makes sorting decisions based on detection results |
+| Controller Node      | Coordinates the complete factory process           |
+| Communication Module | Enables communication between distributed nodes    |
+| Monitoring Module    | Displays system status and sorting results         |
+
+---
+
+## Repository Structure
+
+The repository follows the GitHub submission norms:
+
+```text
+Software-Defined-Factory-Controller/
+│
+├── src/
+│   ├── controller/
+│   ├── conveyor/
+│   ├── detection/
+│   ├── sorting/
+│   └── communication/
+│
+├── docs/
+│   └── project-documentation/
+│
+├── data/
+│   └── README.md
+│
+├── results/
+│   └── README.md
+│
+├── reports/
+│   └── README.md
+│
+└── README.md
+```
+
+### Folder Description
+
+* **`src/`** – Contains the main project source code.
+* **`docs/`** – Contains project documentation and supporting documents.
+* **`data/`** – Contains project data or a documented reference to the data source.
+* **`results/`** – Contains simulation outputs, logs, and result files.
+* **`reports/`** – Contains project reports and review-related documents.
+* **`README.md`** – Contains the complete project information and instructions.
+
+---
 
 ## Setup Instructions
 
-1. Install the required software and dependencies.
-2. Clone this repository.
-3. Navigate to the project directory.
-4. Install the required dependencies.
-5. Configure the project according to the instructions.
+### Prerequisites
+
+Install the required software and dependencies before running the project.
+
+The project requires:
+
+* Linux / RT Linux environment
+* Git
+* Required programming language/runtime dependencies
+* Required libraries for the simulation
+* Networking/communication tools required by the distributed nodes
+
+### Clone the Repository
+
+```bash
+git clone <repository-url>
+```
+
+Navigate to the project directory:
+
+```bash
+cd <repository-name>
+```
+
+Install the required dependencies according to the project implementation.
+
+---
 
 ## Execution Instructions
 
-1. Start the required RT Linux nodes.
-2. Start the conveyor control module.
-3. Start the detection module.
-4. Start the sorting module.
-5. Monitor the communication and sorting results.
+1. Start the required RT Linux environment.
+2. Start the **Controller Node**.
+3. Start the **Conveyor Node**.
+4. Start the **Detection Node**.
+5. Start the **Sorting Node**.
+6. Establish communication between the nodes.
+7. Run the simulated conveyor-based sorting process.
+8. Monitor the communication, object detection, and sorting results.
+9. Check the generated outputs in the `results/` directory.
+
+---
+
+## GitHub Contribution Guidelines
+
+Every team member must contribute using their **own GitHub account** so that individual contributions can be verified through the commit history.
+
+### Commit Requirements
+
+* Each team member must make commits using their own GitHub account.
+* Commits should be meaningful and related to the project.
+* Commits must be made progressively throughout each project phase.
+* The team should maintain a minimum of **one meaningful commit per week**.
+* Bulk uploading the entire project through a single team member's account should be avoided.
+
+### Example Commit Messages
+
+```text
+Add conveyor control module
+Implement object detection logic
+Add RT Linux communication module
+Update sorting algorithm
+Add project documentation
+Fix node communication issue
+Update Review 1 results
+```
+
+---
+
+## Project Phase Tags
+
+Each major phase deliverable should be tagged in the repository.
+
+Example:
+
+```text
+review-1
+review-2
+final
+```
+
+These tags identify the corresponding project milestones and deliverables.
+
+---
+
+## Repository Access
+
+Repository access should be granted to:
+
+* **Supervisor – C.H. Srikanth**
+* **Course Coordinator**
+
+The repository should remain accessible until the completion of the final project evaluation.
+
+---
+
+## Security and Data Guidelines
+
+The following information must **not** be committed to the repository:
+
+* Passwords
+* API keys
+* Authentication credentials
+* Access tokens
+* Licensed datasets without permission
+* Confidential institutional data
+* Other sensitive information
+
+Sensitive information should be stored securely and excluded from Git using `.gitignore` where applicable.
+
+---
 
 ## Current Project Status
 
-Phase: Review 1
+**Phase:** Review 1
 
-Status: Project architecture and initial software structure are being developed.
+**Status:** Project architecture and initial software structure are being developed.
+
+### Current Progress
+
+* Project architecture defined.
+* Distributed RT Linux node structure planned.
+* Conveyor control module planned.
+* Object detection module planned.
+* Sorting module planned.
+* Inter-node communication architecture planned.
+* GitHub repository structure established.
+
+---
+
+## Future Work
+
+* Implement the distributed RT Linux nodes.
+* Implement inter-node communication.
+* Develop the conveyor simulation.
+* Implement object detection and classification.
+* Implement automated sorting logic.
+* Integrate all software modules.
+* Test real-time communication and system performance.
+* Generate and analyze simulation results.
+* Complete Review 2 and final project deliverables.
+
+---
+
+## Project Team
+
+**P Maha Lakshmi** – 2420030313
+**S Tejasree** – 2420030441
+**B Sruthi** – 2420030578
+**K Amulya** – 2420090132
+
+**Supervisor:** C.H. Srikanth
